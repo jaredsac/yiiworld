@@ -29,7 +29,8 @@ class CountryController extends Controller
         ];
     }
 
-    public function actionHello() {
+    public function actionHello()
+    {
         echo "Hello World!";
         exit;
     }
@@ -78,25 +79,27 @@ class CountryController extends Controller
         return $this->render('create', [
             'model' => $model,
         ]);
-
-    
     }
-    use yii\data\Pagination;
-
-    ..
-    ..
-  
     public function actionOverzicht()
     {
         // dit is de query, dit is te vergelijken met select * from Country
-        $countries=Country::find()->all();
-  
-	    // de view wordt aangeroepen en het object $countries en $pagination wordt meegegeven.
+        $countries = Country::find()->all();
+
+        // de view wordt aangeroepen en het object $countries en $pagination wordt meegegeven.
         return $this->render('overzicht', [
             'countries' => $countries,
         ]);
     }
 
+    public function actionOverzichteurope()
+    {
+        $countries = country::find()->where(['Continent' => 'Europe'])->orderBy(['Name' => SORT_ASC])->all();
+
+        return $this->render('overzicht', [
+            'countries' => $countries,
+        ]);
+    }
+    
     /**
      * Updates an existing country model.
      * If update is successful, the browser will be redirected to the 'view' page.

@@ -57,7 +57,8 @@ AppAsset::register($this);
                         ['label' => 'Africa', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Africa']],
                         ['label' => 'Antarctica', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Antarctica']],
                         ['label' => 'Oceania', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Oceania']],
-                        ['label' => 'Overzicht', 'url' => ['/country/index', '' => 'Overzicht']],
+                        ['label' => 'Overzicht', 'url' => ['/country/overzicht', '' => 'Overzicht']],
+                        ['label' => 'EuropaOverzicht', 'url' => ['/country/overzichteurope']],
                     ],
                 ],
 
